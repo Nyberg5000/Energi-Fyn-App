@@ -1,17 +1,22 @@
 import { StyleSheet, View, Text } from "react-native";
 
-function Date(){
-   const date=new Date();
-   const modifiedDate=`${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`;
+
+function TodayDate(){
+  const date=new Date();
+  
+  
+    const modifiedDate=`${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`;
 
     return(
         <View style={styles.date}  >
         <Text>Dags dato: {modifiedDate}</Text> 
         </View>
     );
+  
+    
 }
 
-export default Date;
+export default TodayDate;
 
 const styles =StyleSheet.create({
     date:
@@ -20,7 +25,7 @@ const styles =StyleSheet.create({
         borderBottomWidth:1,
         marginTop: 10,
         marginLeft:10,
-        marginRight:10,a
+        marginRight:10,
       },
 
 })

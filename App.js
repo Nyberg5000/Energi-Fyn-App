@@ -1,6 +1,6 @@
 import { Alert, Button, StyleSheet, Text, View } from 'react-native';
 
-//import Date from './components/Date';
+import TodayDate from './components/TodayDate';
 
 export default function App() {
     
@@ -13,8 +13,9 @@ export default function App() {
     <View style={styles.container} >
       <View style={styles.header} >
         <Text>Dagens opgaver</Text>
-        
-        <Date/>;
+        <Text>
+          <TodayDate/>;
+       </Text>
         
 
       </View>
