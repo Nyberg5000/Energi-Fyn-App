@@ -1,20 +1,59 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Alert, Button, StyleSheet, Text, View } from 'react-native';
+
+//import Date from './components/Date';
 
 export default function App() {
+    
+
+
+
+
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.container} >
+      <View style={styles.header} >
+        <Text>Dagens opgaver</Text>
+        
+        <Date/>;
+        
+
+      </View>
+      <View style= {styles.listObject}>
+        <Button color='#01553D'  onPress={()=> Alert.alert ('Åbner nyt vindue')} title='Tjek af elstander 1234'></Button>
+        <Button color='#01553D' title='Reparation på elstander 3456'></Button>
+      </View>  
+        
     </View>
+
+  
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection:'column',
+    backgroundColor: '#E1F8EC',
+    //alignItems: 'flex-start',
+    //justifyContent: 'flex-start',
+    //marginLeft:10,
+    //marginRight:5,
+    marginTop: 30,
+    paddingTop:10,
   },
+  header:
+  {
+//skal være i midten
+    //flex:1,
+  },
+    listObject:
+  {
+    flex:4,
+    marginTop: 20,
+    marginLeft:10,
+    marginRight:10,
+    
+  }
+  
+
 });
