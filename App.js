@@ -14,7 +14,7 @@ export default function App() {
       <View style={styles.header} >
         <Text>Dagens opgaver</Text>
         <Text>
-          <TodayDate/>;
+          <TodayDate/>
        </Text>
         
 
