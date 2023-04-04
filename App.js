@@ -1,60 +1,58 @@
-import { Alert, Button, StyleSheet, Text, View } from 'react-native';
+import { Alert, Button, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import TodayDate from './components/TodayDate';
+import AssignmentItem from './components/AssignmentItem';
 
 export default function App() {
     
-
-
-
-
-
   return (
-    <View style={styles.container} >
-      <View style={styles.header} >
-        <Text>Dagens opgaver</Text>
-        <Text>
+    <View style={styles.appContainer} >
+     <View  >
+        <Text style={styles.title} >
+          Dagens opgaver
+        </Text>
+     </View>
+      
+      <View/>
+      <View>
+        <Text style={styles.dateContainer} >
           <TodayDate/>
-       </Text>
-        
-
+        </Text>
       </View>
-      <View style= {styles.listObject}>
-        <Button color='#01553D'  onPress={()=> Alert.alert ('Åbner nyt vindue')} title='Tjek af elstander 1234'></Button>
-        <Button color='#01553D' title='Reparation på elstander 3456'></Button>
-      </View>  
+      <View style={styles.AssignmentContainer} >
+        <Text >
+          <AssignmentItem/> 
+          <AssignmentItem/> 
+          <AssignmentItem/> 
+        </Text>
+      </View>
+      <View>
         
+      </View>
     </View>
-
-  
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection:'column',
+ const styles = StyleSheet.create({
+  appContainer: {
+    flex:1,
+    padding: 30,
     backgroundColor: '#E1F8EC',
-    //alignItems: 'flex-start',
-    //justifyContent: 'flex-start',
-    //marginLeft:10,
-    //marginRight:5,
-    marginTop: 30,
-    paddingTop:10,
   },
-  header:
-  {
-//skal være i midten
-    //flex:1,
+  title: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 20,
+    borderBottomWidth: 1
   },
-    listObject:
-  {
-    flex:4,
-    marginTop: 20,
-    marginLeft:10,
-    marginRight:10,
+  dateContainer: {
+    borderBottomWidth: 1,
+    marginBottom: 10,
+    
+  },
+  AssignmentContainer: {
     
   }
   
-
-});
+ 
+}); 

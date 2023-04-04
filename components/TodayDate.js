@@ -8,8 +8,8 @@ function TodayDate(){
     const modifiedDate=`${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`;
 
     return(
-        <View style={styles.date}  >
-        <Text>Dags dato: {modifiedDate}</Text> 
+        <View >
+        <Text style={styles.dateStyle} >Dags dato: {modifiedDate}</Text> 
         </View>
     );
   
@@ -19,13 +19,16 @@ function TodayDate(){
 export default TodayDate;
 
 const styles =StyleSheet.create({
-    date:
-      {
-        //flex:1,
-        borderBottomWidth:1,
-        marginTop: 10,
-        marginLeft:10,
-        marginRight:10,
+ 
+    dateStyle:  {
+       fontWeight: "bold",
+       fontSize: 17,
+       
+       
+        //marginTop: 10,
+        //marginLeft:10,
+        //marginRight:10,
+    
       },
 
 })
