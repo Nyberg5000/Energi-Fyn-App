@@ -1,11 +1,33 @@
+import { NavigationContainer } from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { Alert, Button, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import TodayDate from './components/TodayDate';
 import AssignmentItem from './components/AssignmentItem';
 
+const Stack = createNativeStackNavigator();
+
+const HomeScreen =({navigation})=> {
+  return(
+    <Button title='Gå til opgave'
+    onPress={()=>
+      navigation.navigate('Assignment', {name: 'assignment'}) 
+    } >
+    </Button>
+  )
+}
+
+const AssignmentScreen=({navigation, route})=>{
+  return <Text>Dette er {route.params.name} skærm </Text>
+}
+
 export default function App() {
     
   return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Home'>
+        <Stack.Screen name='Home' component={HomeScreen} />
+        <Stack.Screen name='Assignment' component={AssignmentScreen}/> 
     <View style={styles.appContainer} >
      <View  >
         <Text style={styles.title} >
@@ -30,6 +52,8 @@ export default function App() {
         
       </View>
     </View>
+    </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

@@ -3,7 +3,7 @@
 import { StyleSheet, View, Button } from "react-native";
 function AssignmentItem(){
 function showAssignmentHandler(){
-    //viser opgaven med mere info i en ny screen når knap trykkes
+    //vis opgaven med mere info i en ny screen når knap trykkes
     console.log("pressed");
 }
 
